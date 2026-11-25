@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laboratório de Criptografia e Hash</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>🔐 Laboratório de Criptografia & Hash</h1>
+        <p>Demonstração interativa de cifras, funções hash e ataques de senha.</p>
+    </header>
+
+    <main class="container">
+        <!-- AULA 1 -->
+        <section class="card">
+            <h2>Aula 1: Deslocamento Numérico Simples</h2>
+            <p class="desc">Soma +1 a cada dígito numérico da senha (ex: "123456" vira "234567").</p>
+            <div class="input-group">
+                <input type="text" id="input-aula1" value="123456" placeholder="Digite apenas números">
+                <button onclick="executarAula1()">Criptografar</button>
+            </div>
+            <div class="resultado" id="res-aula1">Resultado: 234567</div>
+        </section>
+
+        <!-- AULA 2 E 3 -->
+        <section class="card">
+            <h2>Aulas 2 e 3: Cifra de Substituição</h2>
+            <p class="desc">Substitui letras minúsculas usando um alfabeto embaralhado (<code>qwerty...</code>).</p>
+            <div class="input-group">
+                <input type="text" id="input-aula2" value="Marcelo123" placeholder="Digite uma senha">
+                <button onclick="executarAula2()">Codificar</button>
+            </div>
+            <div class="resultado" id="res-aula2">Resultado: Mqketsg123</div>
+        </section>
+
+        <!-- AULA 4, 5 E 6 -->
+        <section class="card">
+            <h2>Aulas 4, 5 e 6: Função Hash (32-bit) & Login</h2>
+            <p class="desc">Gera um hash hexadecimal único. Senha cadastrada no sistema: <strong>marcelo123</strong></p>
+            <div class="input-group">
+                <input type="password" id="input-aula4" placeholder="Digite a senha para login">
+                <button onclick="executarAula4()">Verificar Acesso</button>
+            </div>
+            <div class="resultado" id="res-aula4">Aguardando tentativa de login...</div>
+        </section>
+
+        <!-- AULA 7 -->
+        <section class="card">
+            <h2>Aula 7: Dicionário de Hashes Comuns</h2>
+            <p class="desc">Gera hashes de senhas fracas conhecidas e compara com o hash cadastrado.</p>
+            <button onclick="executarAula7()">Gerar Rainbow Table Básica</button>
+            <div class="resultado lista-hash" id="res-aula7">Clique no botão para gerar os hashes...</div>
+        </section>
+
+        <!-- AULA 8 -->
+        <section class="card">
+            <h2>Aula 8: Simulação de Força Bruta</h2>
+            <p class="desc">Testa combinações de caracteres. Para senhas longas, o navegador limita as tentativas para evitar travamentos.</p>
+            <div class="input-group">
+                <input type="text" id="input-aula8" value="abc" maxlength="10" placeholder="Senha curta (ex: abc)">
+                <button onclick="executarAula8()">Iniciar Quebra</button>
+            </div>
+            <div class="resultado" id="res-aula8">Pronto para simular ataque...</div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Projeto transcrito de Python para Web • Hospedado no GitHub</p>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>
